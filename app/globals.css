@@ -32,12 +32,14 @@ section.hero {
 }
 
 input[type='email'],
+input[type='tel'],
 input[type='text'],
 input[type='password'] {
   @apply border p-2 border-gray-300 bg-gray-100 block w-full rounded-md px-4
 }
 
 input[type='email']:disabled,
+input[type='tel']:disabled,
 input[type='text']:disabled,
 input[type='password']:disabled{
   @apply bg-gray-300 cursor-not-allowed
@@ -45,4 +47,7 @@ input[type='password']:disabled{
 
 button[type='submit']:disabled{
   @apply bg-gray-300 cursor-not-allowed
+}
+.profile-round img{
+  @apply rounded-full
 }

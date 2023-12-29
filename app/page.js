@@ -1,4 +1,4 @@
-import Hero from '@/components/layout/hero';
+import Hero from '../components/layout/hero';
 import HomeMenu from '../components/layout/HomeMenu'
 import Image from 'next/image'
 import Link from 'next/link'

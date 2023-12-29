@@ -4,6 +4,8 @@ import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React, { useContext } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, User } from "@nextui-org/react";
+
 
 export default function Header() {
     const { userState, setUserState } = useAuth()
@@ -25,8 +27,33 @@ export default function Header() {
                 <Link href={''}>About</Link>
                 <Link href={''}>Contact</Link>
                 {
-                    userState == true || session.status !== 'unauthenticated' ? <button onClick={handleLogout} className='text-white bg-red-600 px-6 py-2 rounded-full'>Logout</button> : <><Link className='text-white bg-red-600 px-6 py-2 rounded-full' href={'/login'}>Login</Link>
-                        <button className='text-white bg-red-600 px-6 py-2 capitalize rounded-full' href={'/register'}>register</button></>
+                    userState == true || session.status !== 'unauthenticated' ?
+                        <Dropdown placement="bottom-end">
+                            <DropdownTrigger className='rounded-full'>
+                                <div className='flex rounded-[50%] profile-round w-10'>
+
+                                    <Avatar
+                                        isBordered
+                                        as="button"
+                                        className="transition-transform"
+                                        src={session?.data?.user?.image || 'https://images.unsplash.com/broken'}
+                                    />
+                                </div>
+                            </DropdownTrigger>
+                            <DropdownMenu aria-label="Profile Actions" variant="flat" className='p-2 shadow-2xl rounded-lg '>
+                                <DropdownItem key="profile" className="h-14 px-4 py-2 gap-2">
+                                <Link href={'/profile'}>
+                                    <p className="font-semibold">Signed in as</p>
+                                    <p className="font-semibold">{session?.data?.user?.email}</p>
+                                </Link>
+                                </DropdownItem>
+                                <DropdownItem onClick={handleLogout} key="logout" color="danger" className='hover:bg-red-300 text-red-500 px-4 py-2 rounded-lg transition-all outline-none border-0 cursor-pointer'>
+                                    Log Out
+                                </DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
+                        : <><Link className='text-white bg-red-600 px-6 py-2 rounded-full' href={'/login'}>Login</Link>
+                            <Link className='text-white bg-red-600 px-6 py-2 capitalize rounded-full' href={'/register'}>register</Link></>
                 }
 
             </nav>

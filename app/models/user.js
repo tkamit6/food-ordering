@@ -2,19 +2,16 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
 const userSchema = mongoose.Schema({
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true,
-        validate: {
-            validator: pass => pass.length >= 5,
-            message: 'Password must be at least 5 characters'
-        }
-    }
+    name: { type: String },
+    email: { type: String, required: true, unique: true },
+    password: { type: String },
+    image: { type: String },
+    phone:{type: String},
+    Street:{type: String},
+    postalcode:{type: String},
+    city:{type: String},
+    country:{type: String},
+
 }, {
     timestamps: true,
 });
