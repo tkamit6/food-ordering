@@ -6,11 +6,6 @@ const userSchema = mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String },
     image: { type: String },
-    phone:{type: String},
-    Street:{type: String},
-    postalcode:{type: String},
-    city:{type: String},
-    country:{type: String},
 
 }, {
     timestamps: true,

@@ -4,7 +4,7 @@ import MenuItem from './menuItem/MenuItem'
 
 export default function HomeMenu() {
     return (
-        <section>
+        <section className=''>
             <div className='text-center'>
                 <div className='relative'>
                     <div className='absolute -top-20 -z-10 -left-10 w-28 h-48'>
@@ -19,7 +19,7 @@ export default function HomeMenu() {
                     <h3 className='text-red-600 font-bold text-4xl'>Menu</h3>
                 </div>
             </div>
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid grid-cols-3 gap-4 px-24'>
                 <MenuItem />
                 <MenuItem />
                 <MenuItem />

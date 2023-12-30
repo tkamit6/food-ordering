@@ -2,8 +2,10 @@
 
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import UserTabs from '../../components/layout/UserTabs'
 
 export default function page() {
     const [phone, setPhone] = useState('')
@@ -47,6 +49,7 @@ export default function page() {
 
     return (
         <section className='my-4'>
+        <UserTabs isAdmin={true} />
             <h1 className='text-center text-red-600 text-4xl mb-4'>
                 Profile
             </h1>

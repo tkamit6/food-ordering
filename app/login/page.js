@@ -16,6 +16,7 @@ console.log(session)
     e.preventDefault()
     try {
       setLoading(true);
+      // await signIn('credentials')
       const resp = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

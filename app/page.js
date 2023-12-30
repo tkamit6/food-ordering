@@ -8,7 +8,7 @@ export default function Home() {
   return (
 
     <>
-      <div className='mx-12'>
+      <div className=' max-w-7xl mx-auto'>
         <Hero />
         <HomeMenu />
         <section className='py-12'>

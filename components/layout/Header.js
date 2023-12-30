@@ -19,7 +19,7 @@ export default function Header() {
     }
 
     return (
-        <header className='flex items-center justify-between sticky top-0 bg-white py-4'>
+        <header className=' px-10 mx-auto flex items-center justify-between sticky top-0 bg-white py-4'>
             <Link className='text-red-600 font-semibold text-4xl relative' href='/'> Pizza <span className='absolute w-full h-2 -z-10 rounded-full bg-green-500 left-0 bottom-1'></span></Link>
             <nav className='flex gap-8 text-gray-500 font-semibold items-center uppercase '>
                 <Link href={'/'}>Home</Link>
