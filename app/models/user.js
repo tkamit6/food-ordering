@@ -11,14 +11,4 @@ const userSchema = mongoose.Schema({
     timestamps: true,
 });
 
-// userSchema.post('validate', async function (user) {
-//     try {
-//         const notHashedPassword = user.password;
-//         user.password = await bcrypt.hash(notHashedPassword, 10);
-//     } catch (error) {
-//         console.error('Error hashing password:', error);
-//         throw new Error('Failed to hash password');
-//     }
-// });
-
 export const NewUser = mongoose.models.NewUser || mongoose.model('NewUser', userSchema);
