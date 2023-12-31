@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 import GoogleProvider from "next-auth/providers/google";
 
 export const authOption = {
-  secret: process.env.NO_SECRET,
+  secret: process.env.NO_SECRET, 
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
